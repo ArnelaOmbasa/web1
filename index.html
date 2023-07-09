@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Midterm Exam</title>
+    <link
+      rel="stylesheet"
+      href="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+      crossorigin="anonymous"
+    />
+    <style>
+      .panel {
+        min-height: 390px;
+      }
+    </style>
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="//stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZh3w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Midterm Exam</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+        <h1>
+          Welcome to Midterm Exam at course Introduction to Web Programming
+        </h1>
+        <p>
+          This is skeleton project to save you time on exam. You have to
+          populate missing snippet codes to make this project functional
+        </p>
+
+        <h3>Following parts should be completed:</h3>
+
+        <ul>
+          <li>
+            1. Connection to MySQL database in rest/index.php file per TODO
+            instructions in the file
+          </li>
+          <li>
+            2. REST endpoint rest/investors in rest/index.php file per TODO
+            instructions in the file
+          </li>
+          <li>
+            3. REST endpoint rest/investors/@id in rest/index.php file per TODO
+            instructions in the file
+          </li>
+          <li>
+            4. REST endpoint rest/transfer in rest/index.php file per TODO
+            instructions in the file
+          </li>
+          <li>
+            5. REST endpoint rest/transfers in rest/index.php file per TODO
+            instructions in the file
+          </li>
+          <li>
+            6. Ajax Call to rest/investors endpoint from index.html file per
+            TODO intructions in the file
+          </li>
+          <li>
+            7. Ajax Call to rest/investors/@id endpoint from index.html file per
+            TODO intructions in the file
+          </li>
+          <li>
+            8. Ajax Call to rest/transfer endpoint from index.html file per TODO
+            intructions in the file
+          </li>
+          <li>
+            9. Ajax Call to rest/transfers endpoint from index.html file per
+            TODO intructions in the file
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h1 class="panel-title">Transfer Shares</h1>
+            </div>
+            <div class="panel-body">
+              <div id="transfer-shares">
+                <form id="transfer-form">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>FROM</label>
+                        <label for="sender_id">TO</label>
+                        <select
+                          name="sender_id"
+                          class="form-control"
+                          id="sender_id"
+                        >
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>WALLET</label>
+                        <input
+                          name="sender_wallet"
+                          id="sender_wallet"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="recipient_id">TO</label>
+                        <select
+                          name="recipient_id"
+                          class="form-control"
+                          id="recipient_id"
+                        >
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>WALLET</label>
+                        <input
+                          name="recipient_wallet"
+                          id="recipient_wallet"
+                          type="text"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>AMOUNT</label>
+                        <input
+                          name="amount"
+                          type="number"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="transfer_reason">Transfer Reason</label>
+                        <select
+                          name="transfer_reason"
+                          class="form-control"
+                          id="transfer_reason"
+                        >
+                          <option value="gift">Gift</option>
+                          <option value="sale">Sale</option>
+                          <option value="inheritance">Inheritance</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Confirm Tranfer</h3>
+            </div>
+            <div class="panel-body">
+              <div id="confirm-transfer">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h2>From:</h2>
+                    <div id="sender_name">Investor name:</div>
+                    <div id="sender_wallet_field">Investor wallet:</div>
+                  </div>
+                  <div class="col-sm-12">
+                    <h2>To:</h2>
+                    <div id="recipient_name">Investor name:</div>
+                    <div id="recipient_wallet_field">
+                      Investor wallet:
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h2 id="transfer_amount">Amount: 0</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col text-center">
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-lg"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table id="transfers-table" class="table">
+            <thead>
+              <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Created at</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /** TODO implement ajax call to call GET method rest/investors and populate dropdowns with id #sender_id and #recipient_id
+       */
+        $(document).ready(function() {
+          $.ajax({
+              url: "rest/investors",
+              type: 'GET',
+              success: function(data) {
+                  var options = "";
+                  for(var i=0; i<data.length; i++) {
+                      options += '<option value="' + data[i].id + '">' + data[i].first_name + " " + data[i].last_name + '</option>';
+                  }
+                  $('#sender_id').html(options);
+                  $('#recipient_id').html(options);
+              }
+          });
+
+          $('#sender_id').change(function() {
+              var investorId = $(this).val();  // Get the selected investor ID
+              populateWallet(investorId, '#sender_wallet');
+              $('#sender_name').text('Investor name: ' + $("#sender_id option:selected").text());
+          });
+
+          $('#recipient_id').change(function() {
+              var investorId = $(this).val();  // Get the selected investor ID
+              populateWallet(investorId, '#recipient_wallet');
+              $('#recipient_name').text('Investor name: ' + $("#recipient_id option:selected").text());
+          });
+
+          $('input[name=amount]').change(function() {
+              var selectedValue = $(this).val();
+              $('#transfer_amount').text('Amount: ' + selectedValue);
+          });
+
+          // TODO: implement ajax call to call GET method rest/investor/@id and populate field wallet for selected investor
+          function populateWallet(id, element_id){
+            $.ajax({
+                url: 'rest/investors/' + id,
+                type: 'GET',
+                success: function(data) {
+                    $(element_id).val(data.wallet);
+                    
+                    // add these lines
+                    if (element_id === '#sender_wallet') {
+                      $('#sender_wallet_field').text('Investor wallet: ' + data.wallet);
+                    } else if (element_id === '#recipient_wallet') {
+                      $('#recipient_wallet_field').text('Investor wallet: ' + data.wallet);
+                    }
+                },
+                error: function(error) {
+                    console.log("Error:", error);
+                }
+            });
+          }
+        
+        // TODO: implement ajax call to call POST method rest/transfer and save transfer to database table transfers
+        $('.btn.btn-primary.btn-lg').click(function() {
+            // Fetching the form data
+            var senderId = $('#sender_id').val();
+            var recipientId = $('#recipient_id').val();
+            var amount = $('input[name=amount]').val();
+
+            const date = new Date();
+
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+
+            const withSlashes = [year, month, day].join('-');
+            var created_at = withSlashes;
+
+            // Creating the data object to send
+            var transferData = {
+                sender_id: senderId,
+                recipient_id: recipientId,
+                amount: amount,
+                created_at: created_at
+            };
+
+            // Sending the POST request
+            $.ajax({
+                url: 'rest/transfer',
+                type: 'POST',
+                data: transferData,
+                success: function(response) {
+                    console.log('Transfer successful!');
+                },
+                error: function(error) {
+                    console.log("Error:", error);
+                }
+            });
+        });
+
+
+          // TODO: implement ajax call to call GET method rest/transfers and populate table with id #transfers-table
+          $.ajax({
+            url: 'rest/transfers',
+            type: 'GET',
+            success: function(data) {
+                var tableBody = "";
+                for (var i=0; i<data.length; i++) {
+                    tableBody += '<tr>' +
+                        '<td>' + data[i].sender_id + '</td>' +
+                        '<td>' + data[i].recipient_id + '</td>' +
+                        '<td>' + data[i].created_at + '</td>' +
+                        '<td>' + data[i].amount + '</td>' +
+                        '</tr>';
+                }
+                $('#transfers-table tbody').html(tableBody);
+            },
+            error: function(error) {
+                console.log("Error:", error);
+            }
+        });
+        });
+    </script>
+  </body>
+</html>
